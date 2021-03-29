@@ -29,9 +29,14 @@ class ItemTableViewCell: UITableViewCell {
         
         nameLabel.text = item.name
         descriptionLabel.text = item.description
-        priceLabel.text = "\(item.price!)"
+        priceLabel.text = convertToCurrency(item.price)
+        priceLabel.adjustsFontSizeToFitWidth = true
         
-        
+        if item.imageLinks != nil && item.imageLinks.count > 0{
+            getImages(imageUrls: [item.imageLinks.first!]) { (images) in
+                self.itemImageView.image = images.first as? UIImage
+            }
+        }
     }
 
 }

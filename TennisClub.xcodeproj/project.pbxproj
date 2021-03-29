@@ -10,6 +10,9 @@
 		021055C2260F626F00314243 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C1260F626F00314243 /* ItemsTableViewController.swift */; };
 		021055C5260F643E00314243 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C4260F643E00314243 /* Item.swift */; };
 		021055C8260F6E3A00314243 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C7260F6E3A00314243 /* AddItemViewController.swift */; };
+		027FCB2F2611B9BF0097C78D /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */; };
+		027FCB322611BE4F0097C78D /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB312611BE4F0097C78D /* ItemViewController.swift */; };
+		027FCB352611C70D0097C78D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */; };
 		02814A3C260FBE28001EFEF0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02814A3B260FBE28001EFEF0 /* Reachability.swift */; };
 		02814A3F260FC10B001EFEF0 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02814A3E260FC10B001EFEF0 /* Downloader.swift */; };
 		02814A42260FD1AF001EFEF0 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02814A41260FD1AF001EFEF0 /* ItemTableViewCell.swift */; };
@@ -36,6 +39,9 @@
 		021055C1260F626F00314243 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		021055C4260F643E00314243 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		021055C7260F6E3A00314243 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		027FCB312611BE4F0097C78D /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		02814A3B260FBE28001EFEF0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		02814A3E260FC10B001EFEF0 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		02814A41260FD1AF001EFEF0 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 				02C61F8B260E208500104C0A /* Constants.swift */,
 				02814A3B260FBE28001EFEF0 /* Reachability.swift */,
 				02814A3E260FC10B001EFEF0 /* Downloader.swift */,
+				027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 				02C61F72260E185C00104C0A /* CategoryCollectionViewController.swift */,
 				021055C1260F626F00314243 /* ItemsTableViewController.swift */,
 				021055C7260F6E3A00314243 /* AddItemViewController.swift */,
+				027FCB312611BE4F0097C78D /* ItemViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -141,6 +149,7 @@
 			children = (
 				02C61F75260E192000104C0A /* CategoryCollectionViewCell.swift */,
 				02814A41260FD1AF001EFEF0 /* ItemTableViewCell.swift */,
+				027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -289,8 +298,10 @@
 				02B3F97A25FCE752008E494C /* ViewController.swift in Sources */,
 				02B3F97625FCE752008E494C /* AppDelegate.swift in Sources */,
 				02C61F7C260E1D5500104C0A /* FirebaseCollectionReference.swift in Sources */,
+				027FCB352611C70D0097C78D /* ImageCollectionViewCell.swift in Sources */,
 				02C61F73260E185C00104C0A /* CategoryCollectionViewController.swift in Sources */,
 				021055C5260F643E00314243 /* Item.swift in Sources */,
+				027FCB2F2611B9BF0097C78D /* HelperFunctions.swift in Sources */,
 				021055C8260F6E3A00314243 /* AddItemViewController.swift in Sources */,
 				02B3F97825FCE752008E494C /* SceneDelegate.swift in Sources */,
 				02C61F76260E192000104C0A /* CategoryCollectionViewCell.swift in Sources */,
@@ -302,6 +313,7 @@
 				02B3F99325FCF765008E494C /* InfoViewController.swift in Sources */,
 				02B3F99625FCF791008E494C /* SettingsViewController.swift in Sources */,
 				02C61F85260E1ED500104C0A /* Category.swift in Sources */,
+				027FCB322611BE4F0097C78D /* ItemViewController.swift in Sources */,
 				02814A3C260FBE28001EFEF0 /* Reachability.swift in Sources */,
 				02C61F8C260E208500104C0A /* Constants.swift in Sources */,
 			);

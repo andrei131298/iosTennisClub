@@ -17,6 +17,8 @@
 		02814A3F260FC10B001EFEF0 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02814A3E260FC10B001EFEF0 /* Downloader.swift */; };
 		02814A42260FD1AF001EFEF0 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02814A41260FD1AF001EFEF0 /* ItemTableViewCell.swift */; };
 		028AE51C25FF837F0008D583 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AE51B25FF837F0008D583 /* SecondViewController.swift */; };
+		029C78A726123E49006C6D4D /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C78A626123E49006C6D4D /* Basket.swift */; };
+		029C78AA26124FA6006C6D4D /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C78A926124FA6006C6D4D /* BasketViewController.swift */; };
 		02B3F97625FCE752008E494C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3F97525FCE752008E494C /* AppDelegate.swift */; };
 		02B3F97825FCE752008E494C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3F97725FCE752008E494C /* SceneDelegate.swift */; };
 		02B3F97A25FCE752008E494C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3F97925FCE752008E494C /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		02814A3E260FC10B001EFEF0 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		02814A41260FD1AF001EFEF0 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		028AE51B25FF837F0008D583 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		029C78A626123E49006C6D4D /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		029C78A926124FA6006C6D4D /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		02B3F97225FCE752008E494C /* TennisClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B3F97525FCE752008E494C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B3F97725FCE752008E494C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				021055C1260F626F00314243 /* ItemsTableViewController.swift */,
 				021055C7260F6E3A00314243 /* AddItemViewController.swift */,
 				027FCB312611BE4F0097C78D /* ItemViewController.swift */,
+				029C78A926124FA6006C6D4D /* BasketViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			children = (
 				02C61F84260E1ED500104C0A /* Category.swift */,
 				021055C4260F643E00314243 /* Item.swift */,
+				029C78A626123E49006C6D4D /* Basket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,9 +318,11 @@
 				021055C2260F626F00314243 /* ItemsTableViewController.swift in Sources */,
 				02B3F99325FCF765008E494C /* InfoViewController.swift in Sources */,
 				02B3F99625FCF791008E494C /* SettingsViewController.swift in Sources */,
+				029C78A726123E49006C6D4D /* Basket.swift in Sources */,
 				02C61F85260E1ED500104C0A /* Category.swift in Sources */,
 				027FCB322611BE4F0097C78D /* ItemViewController.swift in Sources */,
 				02814A3C260FBE28001EFEF0 /* Reachability.swift in Sources */,
+				029C78AA26124FA6006C6D4D /* BasketViewController.swift in Sources */,
 				02C61F8C260E208500104C0A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

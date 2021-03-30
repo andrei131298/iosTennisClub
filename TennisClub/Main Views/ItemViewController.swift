@@ -62,18 +62,23 @@ class ItemViewController: UIViewController {
     @objc func addToBasketButtonPressed(){
 
         
+        if User.currentUser() != nil{
+            getBasketFromFirebase(User.currentId()) { (basket) in
+                if basket == nil {
+                    self.createNewBasket()
+                }
+                else{
+                    basket!.itemIds.append(self.item.id)
+                    print(basket!.itemIds)
+                    self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+                }
+            }
+        }
+        else{
+            showLoginView()
+
+        }
         
-//        getBasketFromFirebase("1234") { (basket) in
-//            if basket == nil {
-//                self.createNewBasket()
-//            }
-//            else{
-//                basket!.itemIds.append(self.item.id)
-//                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
-//            }
-//        }
-        
-        showLoginView()
 
     }
 
@@ -81,7 +86,7 @@ class ItemViewController: UIViewController {
         
         let newBasket = Basket()
         newBasket.id = UUID().uuidString
-        newBasket.ownerId = "1234"
+        newBasket.ownerId = User.currentId()
         newBasket.itemIds = [self.item.id]
         saveBasketToFirebase(newBasket)
         

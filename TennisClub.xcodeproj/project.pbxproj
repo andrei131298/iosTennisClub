@@ -12,6 +12,9 @@
 		021055C8260F6E3A00314243 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C7260F6E3A00314243 /* AddItemViewController.swift */; };
 		022A2A0426131A0700B1C67D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2A0326131A0700B1C67D /* WelcomeViewController.swift */; };
 		022A2A072613231B00B1C67D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2A062613231B00B1C67D /* User.swift */; };
+		022F35132613567300F5F4DE /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F35122613567300F5F4DE /* ProfileTableViewController.swift */; };
+		022F35162613622D00F5F4DE /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F35152613622D00F5F4DE /* FinishRegistrationViewController.swift */; };
+		022F351B2613709100F5F4DE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022F351A2613709100F5F4DE /* EditProfileViewController.swift */; };
 		027FCB2F2611B9BF0097C78D /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */; };
 		027FCB322611BE4F0097C78D /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB312611BE4F0097C78D /* ItemViewController.swift */; };
 		027FCB352611C70D0097C78D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */; };
@@ -45,6 +48,9 @@
 		021055C7260F6E3A00314243 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		022A2A0326131A0700B1C67D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		022A2A062613231B00B1C67D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		022F35122613567300F5F4DE /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		022F35152613622D00F5F4DE /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
+		022F351A2613709100F5F4DE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		027FCB312611BE4F0097C78D /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022F35182613623D00F5F4DE /* Login View */ = {
+			isa = PBXGroup;
+			children = (
+				022F35152613622D00F5F4DE /* FinishRegistrationViewController.swift */,
+				022A2A0326131A0700B1C67D /* WelcomeViewController.swift */,
+				022F351A2613709100F5F4DE /* EditProfileViewController.swift */,
+			);
+			name = "Login View";
+			sourceTree = "<group>";
+		};
 		02B3F96925FCE752008E494C = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +165,8 @@
 				021055C7260F6E3A00314243 /* AddItemViewController.swift */,
 				027FCB312611BE4F0097C78D /* ItemViewController.swift */,
 				029C78A926124FA6006C6D4D /* BasketViewController.swift */,
-				022A2A0326131A0700B1C67D /* WelcomeViewController.swift */,
+				022F35122613567300F5F4DE /* ProfileTableViewController.swift */,
+				022F35182613623D00F5F4DE /* Login View */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -315,16 +332,19 @@
 				02C61F73260E185C00104C0A /* CategoryCollectionViewController.swift in Sources */,
 				021055C5260F643E00314243 /* Item.swift in Sources */,
 				027FCB2F2611B9BF0097C78D /* HelperFunctions.swift in Sources */,
+				022F35132613567300F5F4DE /* ProfileTableViewController.swift in Sources */,
 				021055C8260F6E3A00314243 /* AddItemViewController.swift in Sources */,
 				02B3F97825FCE752008E494C /* SceneDelegate.swift in Sources */,
 				022A2A0426131A0700B1C67D /* WelcomeViewController.swift in Sources */,
 				02C61F76260E192000104C0A /* CategoryCollectionViewCell.swift in Sources */,
 				02B3F99025FCF63C008E494C /* sideMenu.swift in Sources */,
 				028AE51C25FF837F0008D583 /* SecondViewController.swift in Sources */,
+				022F35162613622D00F5F4DE /* FinishRegistrationViewController.swift in Sources */,
 				02814A42260FD1AF001EFEF0 /* ItemTableViewCell.swift in Sources */,
 				02814A3F260FC10B001EFEF0 /* Downloader.swift in Sources */,
 				021055C2260F626F00314243 /* ItemsTableViewController.swift in Sources */,
 				02B3F99325FCF765008E494C /* InfoViewController.swift in Sources */,
+				022F351B2613709100F5F4DE /* EditProfileViewController.swift in Sources */,
 				02B3F99625FCF791008E494C /* SettingsViewController.swift in Sources */,
 				029C78A726123E49006C6D4D /* Basket.swift in Sources */,
 				02C61F85260E1ED500104C0A /* Category.swift in Sources */,

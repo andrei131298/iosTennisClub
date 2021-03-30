@@ -37,7 +37,7 @@ public let kITEMIDS = "itemIds"
 //User
 public let kEMAIL = "email"
 public let kFIRSTNAME = "firstName"
-public let kLASTNAME = "lastNAme"
+public let kLASTNAME = "lastName"
 public let kFULLNAME = "fullName"
 public let kCURRENTUSER = "currentUser"
 public let kFULLADDRESS = "fullAddress"

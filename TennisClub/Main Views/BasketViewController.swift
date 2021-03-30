@@ -31,6 +31,7 @@ class BasketViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        
         loadBasketFromFirebase()
         
     }
@@ -43,7 +44,7 @@ class BasketViewController: UIViewController {
     }
     
     private func loadBasketFromFirebase(){
-        getBasketFromFirebase("1234") { (basket) in
+        getBasketFromFirebase(User.currentId()) { (basket) in
             self.basket = basket
             self.getBasketItems()
             

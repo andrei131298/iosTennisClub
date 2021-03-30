@@ -75,7 +75,13 @@ class User{
     }
     
     class func currentId() -> String{
-        return Auth.auth().currentUser!.uid
+        
+        if Auth.auth().currentUser != nil{
+            return Auth.auth().currentUser!.uid
+        }
+        else{
+            return ""
+        }
     }
     
     class func currentUser() -> User?{
@@ -94,6 +100,7 @@ class User{
             if error == nil{
                 if authDataResult!.user.isEmailVerified{
                     //get user from Firebase
+                    getUserFromFirebase(userId: authDataResult!.user.uid, email: email)
                     completion(error, true)
                 }
                 else{
@@ -105,6 +112,17 @@ class User{
                 completion(error, false)
             }
         }
+    }
+    
+    class func logoutUser(){
+        
+        do{
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("already logged out")
+        }
+        
     }
     
     class func registerUserWithEmail(email: String, password: String, completion: @escaping(_ error: Error?) -> Void){
@@ -124,4 +142,84 @@ class User{
         }
         
     }
+    
+    class func resetPasswordFor(email: String, completion: @escaping(_ error: Error?) -> Void){
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            completion(error)
+            
+        }
+    }
+    
+    class func resendVerificationEmail(email: String, completion: @escaping(_ error:Error?) -> Void){
+        
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            
+            Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+                print("resend email error", error?.localizedDescription)
+                completion(error)
+            })
+        })
+        
+    }
+    
+}
+
+func getUserFromFirebase(userId: String, email: String){
+    
+    FirebaseReference(.User).document(userId).getDocument { (snapshot, error) in
+        
+        guard let snapshot = snapshot else { return }
+        if snapshot.exists{
+            saveUserLocally(userDictionary: snapshot.data()! as NSDictionary)
+        }
+        else{
+            //save new user
+            let user = User(_objectId: userId, _email: email, _firstName: "", _lastName: "")
+            saveUserLocally(userDictionary: userDictionaryForm(user: user))
+            saveUserToFirebase(user: user)
+        }
+        
+    }
+    
+
+}
+
+
+func saveUserToFirebase(user: User){
+    
+    FirebaseReference(.User).document(user.objectId).setData(userDictionaryForm(user: user) as! [String: Any]) { (error) in
+        if error != nil {
+            print("error saving user")
+        }
+    }
+}
+
+func saveUserLocally(userDictionary: NSDictionary){
+    UserDefaults.standard.set(userDictionary, forKey: kCURRENTUSER)
+    UserDefaults.standard.synchronize()
+}
+
+func userDictionaryForm(user: User) -> NSDictionary{
+    
+    return NSDictionary(objects: [user.objectId,user.email,user.firstName, user.lastName, user.fullName, user.fullAddress ?? "", user.onBoard, user.purchasedItemIds], forKeys: [kOBJECTID as NSCopying, kEMAIL as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying,
+    kFULLADDRESS as NSCopying, kONBOARD as NSCopying, kPURCHASEDITEMIDS as NSCopying])
+    
+}
+
+func updateCurrentUserInFirebase(withValues: [String:Any], completion: @escaping(_ error: Error?) -> Void){
+    
+    if let dictionary = UserDefaults.standard.object(forKey: kCURRENTUSER){
+        let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        userObject.setValuesForKeys(withValues)
+        
+        FirebaseReference(.User).document(User.currentId()).updateData(withValues) { (error) in
+            completion(error)
+            
+            if error == nil {
+                saveUserLocally(userDictionary: userObject)
+            }
+        }
+    }
+    
 }

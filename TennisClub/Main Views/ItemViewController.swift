@@ -63,15 +63,17 @@ class ItemViewController: UIViewController {
 
         
         
-        getBasketFromFirebase("1234") { (basket) in
-            if basket == nil {
-                self.createNewBasket()
-            }
-            else{
-                basket!.itemIds.append(self.item.id)
-                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
-            }
-        }
+//        getBasketFromFirebase("1234") { (basket) in
+//            if basket == nil {
+//                self.createNewBasket()
+//            }
+//            else{
+//                basket!.itemIds.append(self.item.id)
+//                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+//            }
+//        }
+        
+        showLoginView()
 
     }
 
@@ -109,6 +111,12 @@ class ItemViewController: UIViewController {
             
         }
         
+    }
+    
+    private func showLoginView(){
+        
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        self.present(loginView, animated: true, completion: nil)
     }
     
 }

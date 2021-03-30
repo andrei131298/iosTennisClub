@@ -10,6 +10,8 @@
 		021055C2260F626F00314243 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C1260F626F00314243 /* ItemsTableViewController.swift */; };
 		021055C5260F643E00314243 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C4260F643E00314243 /* Item.swift */; };
 		021055C8260F6E3A00314243 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021055C7260F6E3A00314243 /* AddItemViewController.swift */; };
+		022A2A0426131A0700B1C67D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2A0326131A0700B1C67D /* WelcomeViewController.swift */; };
+		022A2A072613231B00B1C67D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A2A062613231B00B1C67D /* User.swift */; };
 		027FCB2F2611B9BF0097C78D /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */; };
 		027FCB322611BE4F0097C78D /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB312611BE4F0097C78D /* ItemViewController.swift */; };
 		027FCB352611C70D0097C78D /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */; };
@@ -41,6 +43,8 @@
 		021055C1260F626F00314243 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		021055C4260F643E00314243 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		021055C7260F6E3A00314243 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		022A2A0326131A0700B1C67D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		022A2A062613231B00B1C67D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		027FCB2E2611B9BF0097C78D /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		027FCB312611BE4F0097C78D /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		027FCB342611C70D0097C78D /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				021055C7260F6E3A00314243 /* AddItemViewController.swift */,
 				027FCB312611BE4F0097C78D /* ItemViewController.swift */,
 				029C78A926124FA6006C6D4D /* BasketViewController.swift */,
+				022A2A0326131A0700B1C67D /* WelcomeViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				02C61F84260E1ED500104C0A /* Category.swift */,
 				021055C4260F643E00314243 /* Item.swift */,
 				029C78A626123E49006C6D4D /* Basket.swift */,
+				022A2A062613231B00B1C67D /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,12 +310,14 @@
 				02B3F97A25FCE752008E494C /* ViewController.swift in Sources */,
 				02B3F97625FCE752008E494C /* AppDelegate.swift in Sources */,
 				02C61F7C260E1D5500104C0A /* FirebaseCollectionReference.swift in Sources */,
+				022A2A072613231B00B1C67D /* User.swift in Sources */,
 				027FCB352611C70D0097C78D /* ImageCollectionViewCell.swift in Sources */,
 				02C61F73260E185C00104C0A /* CategoryCollectionViewController.swift in Sources */,
 				021055C5260F643E00314243 /* Item.swift in Sources */,
 				027FCB2F2611B9BF0097C78D /* HelperFunctions.swift in Sources */,
 				021055C8260F6E3A00314243 /* AddItemViewController.swift in Sources */,
 				02B3F97825FCE752008E494C /* SceneDelegate.swift in Sources */,
+				022A2A0426131A0700B1C67D /* WelcomeViewController.swift in Sources */,
 				02C61F76260E192000104C0A /* CategoryCollectionViewCell.swift in Sources */,
 				02B3F99025FCF63C008E494C /* sideMenu.swift in Sources */,
 				028AE51C25FF837F0008D583 /* SecondViewController.swift in Sources */,

@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var resendButtonOutlet: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var instanceOfProfile: ProfileTableViewController!
     let hud = JGProgressHUD(style: .dark)
     var activityIndicator : NVActivityIndicatorView?
     
@@ -92,6 +93,9 @@ class WelcomeViewController: UIViewController {
             if error == nil{
                 
                 if isEmailVerified{
+                    if self.instanceOfProfile != nil{
+                        self.instanceOfProfile.viewDidAppear(true)
+                    }
                     self.dismissView()
                 }
                 else{

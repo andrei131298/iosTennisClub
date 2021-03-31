@@ -27,7 +27,9 @@ class ProfileTableViewController: UITableViewController {
         //check logged in status
         checkLoginStatus()
         checkOnBoardingStatus()
+        
     }
+   
 
     // MARK: - Table view data source
 
@@ -45,11 +47,13 @@ class ProfileTableViewController: UITableViewController {
             if User.currentUser()!.onBoard{
                 finishRegistrationButton.setTitle("Account is active", for: .normal)
                 finishRegistrationButton.isEnabled = false
+                title = User.currentUser()?.firstName
             }
             else{
                 finishRegistrationButton.setTitle("Finish registration", for: .normal)
                 finishRegistrationButton.isEnabled = true
                 finishRegistrationButton.tintColor = .red
+                purchaseHistoryButton.isEnabled = false
             }
         }
         else{
@@ -89,15 +93,23 @@ class ProfileTableViewController: UITableViewController {
     }
 
    
+    @IBAction func purchaseHistoryButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toPurchasedItems", sender: self)
+    }
+    
     @IBAction func logOutButtonPressed(_ sender: Any) {
         User.logoutUser()
-        self.tableView.reloadData()
+        title = "Profile"
+        self.viewDidAppear(true)
+        
     }
     
     private func showLoginView(){
         
-        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
-        self.present(loginView, animated: true, completion: nil)
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil)
+        let loginDestination = loginView.instantiateViewController(identifier: "loginView") as! WelcomeViewController
+        loginDestination.instanceOfProfile = self
+        self.present(loginDestination, animated: true, completion: nil)
     }
     
     private func goToEditProfile(){

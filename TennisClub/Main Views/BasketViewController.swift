@@ -25,8 +25,6 @@ class BasketViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = footerView
         
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool){
@@ -34,12 +32,18 @@ class BasketViewController: UIViewController {
         
         loadBasketFromFirebase()
         
+        
     }
-    
 
     @IBAction func checkOutButtonPressed(_ sender: Any) {
         
-        
+        if User.currentUser() != nil{
+            if basket != nil {
+                purchasedItemIds = basket!.itemIds
+                print(purchasedItemIds)
+                updatePurchasedItems(withValues: [kPURCHASEDITEMIDS : purchasedItemIds])
+            }
+        }
         
     }
     
@@ -96,9 +100,8 @@ class BasketViewController: UIViewController {
     
     private func checkOutButtonStatusUpdate(){
         
-        checkOutButtonOutlet.isEnabled = allItems.count > 0
-        
-        if checkOutButtonOutlet.isEnabled{
+        if allItems.count > 0{
+            checkOutButtonOutlet.isEnabled = true
             checkOutButtonOutlet.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         }
         else{
@@ -119,6 +122,26 @@ class BasketViewController: UIViewController {
                 basket!.itemIds.remove(at: i)
                 return
             }
+        }
+        
+    }
+    private func updatePurchasedItems(withValues: [String:Any]){
+        
+        updateCurrentUserInFirebase(withValues: withValues) { (error) in
+            
+            if error != nil{
+                self.hud.textLabel.text = "Error: \(error!.localizedDescription)"
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+            else{
+                self.hud.textLabel.text = "Added to purchased items"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+            
         }
         
     }

@@ -15,12 +15,12 @@ class ViewController: UIViewController, MenuControllerDelegate {
     private var secondView : SecondViewController?
     private let settingsController = SettingsViewController()
     private let infoController = InfoViewController()
-    
-    @IBOutlet weak var cartImage: UIImageView!
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let menu = MenuController(with: ["Home","Info","Settings"])
+        let menu = MenuController(with: ["Home", "Category", "Profile", "Contact"])
         
         menu.delegate = self
         
@@ -39,6 +39,7 @@ class ViewController: UIViewController, MenuControllerDelegate {
         addChild(settingsController)
         addChild(infoController)
         
+        
         view.addSubview(settingsController.view)
         view.addSubview(infoController.view)
         
@@ -54,9 +55,6 @@ class ViewController: UIViewController, MenuControllerDelegate {
 
     }
     
-    @IBAction func buttonClick(_ sender: Any) {
-        performSegue(withIdentifier: "secondView", sender: self)
-    }
     @IBAction func didTapMenuButton(_ sender: Any) {
         present(sideMenu!, animated: true)
     }
@@ -70,11 +68,11 @@ class ViewController: UIViewController, MenuControllerDelegate {
                 self?.settingsController.view.isHidden = true
                 self?.infoController.view.isHidden = true
             }
-            else if named == "Info"{
+            else if named == "Category"{
                 self?.settingsController.view.isHidden = true
-                self?.infoController.view.isHidden = false
+                self?.infoController.view.isHidden = true
             }
-            else if named == "Settings"{
+            else if named == "Profile"{
                 self?.settingsController.view.isHidden = false
                 self?.infoController.view.isHidden = true
             }

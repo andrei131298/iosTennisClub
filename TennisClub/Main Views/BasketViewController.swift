@@ -39,9 +39,25 @@ class BasketViewController: UIViewController {
         
         if User.currentUser() != nil{
             if basket != nil {
-                purchasedItemIds = basket!.itemIds
+                purchasedItemIds = User.currentUser()!.purchasedItemIds
+                for item in basket!.itemIds{
+                    purchasedItemIds.append(item)
+                }
                 print(purchasedItemIds)
                 updatePurchasedItems(withValues: [kPURCHASEDITEMIDS : purchasedItemIds])
+                
+                for i in basket!.itemIds{
+                    removItemFromBasket(itemId: i)
+                }
+                
+                updateBasketInFirebase(basket!, withValues: [kITEMIDS:basket!.itemIds]) { (error) in
+                    if error != nil{
+                        print("error updating ", error!.localizedDescription)
+                    }
+                    
+                    self.getBasketItems()
+                }
+                tableView.reloadData()
             }
         }
         

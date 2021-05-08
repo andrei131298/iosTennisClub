@@ -24,6 +24,7 @@
 		028AE51C25FF837F0008D583 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AE51B25FF837F0008D583 /* SecondViewController.swift */; };
 		029C78A726123E49006C6D4D /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C78A626123E49006C6D4D /* Basket.swift */; };
 		029C78AA26124FA6006C6D4D /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C78A926124FA6006C6D4D /* BasketViewController.swift */; };
+		02A4CD1A2646D47900E2A522 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A4CD192646D47900E2A522 /* ContactViewController.swift */; };
 		02B3F97625FCE752008E494C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3F97525FCE752008E494C /* AppDelegate.swift */; };
 		02B3F97825FCE752008E494C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3F97725FCE752008E494C /* SceneDelegate.swift */; };
 		02B3F97A25FCE752008E494C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B3F97925FCE752008E494C /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		028AE51B25FF837F0008D583 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		029C78A626123E49006C6D4D /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		029C78A926124FA6006C6D4D /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		02A4CD192646D47900E2A522 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		02B3F97225FCE752008E494C /* TennisClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B3F97525FCE752008E494C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B3F97725FCE752008E494C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		02C61F80260E1E7800104C0A /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
+				02A4CD192646D47900E2A522 /* ContactViewController.swift */,
 				02C0404B2614EA2700147301 /* PurchasedHistoryTableViewController.swift */,
 				02B3F97925FCE752008E494C /* ViewController.swift */,
 				02C61F72260E185C00104C0A /* CategoryCollectionViewController.swift */,
@@ -356,6 +359,7 @@
 				02814A3C260FBE28001EFEF0 /* Reachability.swift in Sources */,
 				029C78AA26124FA6006C6D4D /* BasketViewController.swift in Sources */,
 				02C61F8C260E208500104C0A /* Constants.swift in Sources */,
+				02A4CD1A2646D47900E2A522 /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

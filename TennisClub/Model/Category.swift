@@ -50,6 +50,7 @@ func getCategoriesFromFirebase(completion: @escaping (_ categoryArray:[Category]
         
         completion(categoryArray)
     }
+    print(categoryArray)
 }
 
 //Save category function

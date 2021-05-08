@@ -34,7 +34,7 @@ class ProfileTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -48,6 +48,7 @@ class ProfileTableViewController: UITableViewController {
                 finishRegistrationButton.setTitle("Account is active", for: .normal)
                 finishRegistrationButton.isEnabled = false
                 title = User.currentUser()?.firstName
+                purchaseHistoryButton.isEnabled = true
             }
             else{
                 finishRegistrationButton.setTitle("Finish registration", for: .normal)

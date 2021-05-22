@@ -42,12 +42,13 @@ class ProfileTableViewController: UITableViewController {
     }
     
     private func checkOnBoardingStatus(){
-        
+        print(User.currentUser()?.firstName)
         if User.currentUser() != nil{
             if User.currentUser()!.onBoard{
                 finishRegistrationButton.setTitle("Account is active", for: .normal)
                 finishRegistrationButton.isEnabled = false
-                title = User.currentUser()?.firstName
+                let currentUser = User.currentUser()!
+                title = currentUser.firstName
                 purchaseHistoryButton.isEnabled = true
             }
             else{
@@ -55,12 +56,14 @@ class ProfileTableViewController: UITableViewController {
                 finishRegistrationButton.isEnabled = true
                 finishRegistrationButton.tintColor = .red
                 purchaseHistoryButton.isEnabled = false
+                title = "Profile"
             }
         }
         else{
             finishRegistrationButton.setTitle("Logged out", for: .normal)
             finishRegistrationButton.isEnabled = false
             purchaseHistoryButton.isEnabled = false
+            title = "Profile"
         }
     }
     
@@ -110,7 +113,9 @@ class ProfileTableViewController: UITableViewController {
         let loginView = UIStoryboard.init(name: "Main", bundle: nil)
         let loginDestination = loginView.instantiateViewController(identifier: "loginView") as! WelcomeViewController
         loginDestination.instanceOfProfile = self
+        loginDestination.modalPresentationStyle = .fullScreen
         self.present(loginDestination, animated: true, completion: nil)
+
     }
     
     private func goToEditProfile(){

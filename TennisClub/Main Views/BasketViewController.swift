@@ -38,27 +38,36 @@ class BasketViewController: UIViewController {
     @IBAction func checkOutButtonPressed(_ sender: Any) {
         
         if User.currentUser() != nil{
-            if basket != nil {
-                purchasedItemIds = User.currentUser()!.purchasedItemIds
-                for item in basket!.itemIds{
-                    purchasedItemIds.append(item)
-                }
-                print(purchasedItemIds)
-                updatePurchasedItems(withValues: [kPURCHASEDITEMIDS : purchasedItemIds])
-                
-                for i in basket!.itemIds{
-                    removItemFromBasket(itemId: i)
-                }
-                
-                updateBasketInFirebase(basket!, withValues: [kITEMIDS:basket!.itemIds]) { (error) in
-                    if error != nil{
-                        print("error updating ", error!.localizedDescription)
+            if(User.currentUser()!.onBoard){
+                if basket != nil {
+                    purchasedItemIds = User.currentUser()!.purchasedItemIds
+                    for item in basket!.itemIds{
+                        purchasedItemIds.append(item)
+                    }
+                    print(purchasedItemIds)
+                    updatePurchasedItems(withValues: [kPURCHASEDITEMIDS : purchasedItemIds])
+                    
+                    for i in basket!.itemIds{
+                        removItemFromBasket(itemId: i)
                     }
                     
-                    self.getBasketItems()
+                    updateBasketInFirebase(basket!, withValues: [kITEMIDS:basket!.itemIds]) { (error) in
+                        if error != nil{
+                            print("error updating ", error!.localizedDescription)
+                        }
+                        
+                        self.getBasketItems()
+                    }
+                    tableView.reloadData()
                 }
-                tableView.reloadData()
             }
+            else{
+                self.hud.textLabel.text = "Please specify your details first"
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+            
         }
         
     }

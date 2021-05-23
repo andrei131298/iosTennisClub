@@ -95,10 +95,8 @@ class WelcomeViewController: UIViewController {
                 if isEmailVerified{
                     if self.instanceOfProfile != nil{
                         self.instanceOfProfile.viewDidAppear(true)
-                        //self.performSegue(withIdentifier: "profileTableView", sender: self)
                     }
                     self.dismissView()
-//                    self.performSegue(withIdentifier: "profileTableSegue", sender: self)
                 }
                 else{
                     self.hud.textLabel.text = "Please verify your email"

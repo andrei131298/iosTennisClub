@@ -29,7 +29,6 @@ class Category  {
     }
 }
 
-//get category
 func getCategoriesFromFirebase(completion: @escaping (_ categoryArray:[Category])->Void){
     
     var categoryArray: [Category] = []
@@ -53,7 +52,6 @@ func getCategoriesFromFirebase(completion: @escaping (_ categoryArray:[Category]
     print(categoryArray)
 }
 
-//Save category function
 func saveCategoryToFirebase(_ category: Category){
     
     let id = UUID().uuidString
@@ -62,14 +60,12 @@ func saveCategoryToFirebase(_ category: Category){
     FirebaseReference(.Category).document(id).setData(categoryDictionaryForm(category) as! [String : Any])
 }
 
-//Helpers
 
 func categoryDictionaryForm(_ category:Category)->NSDictionary{
     
     return NSDictionary(objects: [category.id, category.name, category.imageName], forKeys: [kOBJECTID as NSCopying, kNAME as NSCopying, kIMAGENAME as NSCopying])
 }
 
-//use only one time
 //func createCategorySet(){
 //
 //    print("daaa")

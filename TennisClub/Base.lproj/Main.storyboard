@@ -1109,7 +1109,7 @@
             </objects>
             <point key="canvasLocation" x="3201" y="1490"/>
         </scene>
-        <!--Contact View Controller-->
+        <!--Contact-->
         <scene sceneID="hAR-nA-3QU">
             <objects>
                 <viewController id="YPi-e7-IwK" customClass="ContactViewController" customModule="TennisClub" customModuleProvider="target" sceneMemberID="viewController">
@@ -1154,7 +1154,7 @@
                             <constraint firstItem="AMk-03-6T7" firstAttribute="centerX" secondItem="UDy-4M-2wA" secondAttribute="centerX" id="xNu-j8-1Cr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Q9N-Uq-bIA"/>
+                    <navigationItem key="navigationItem" title="Contact" id="Q9N-Uq-bIA"/>
                     <connections>
                         <outlet property="mapView" destination="X0G-tc-fyS" id="oNb-MZ-cdy"/>
                     </connections>
